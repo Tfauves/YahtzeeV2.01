@@ -5,7 +5,7 @@ public class Yahtzee {
     private final Scanner scanner = new Scanner(System.in);
 
     public Yahtzee() {
-        System.out.println("What is your name?");
+        System.out.println("Enter Player One Name: ");
         player = new Player((scanner.nextLine()).trim());
     }
 
@@ -14,7 +14,7 @@ public class Yahtzee {
         for (int i =0 ; i < 5; i++) {
             turn();
         }
-        System.out.println(player.score);
+        System.out.println("The current score for " + player.name + " is " + player.score);
     }
 
     public void getSelections() {
@@ -33,9 +33,9 @@ public class Yahtzee {
         }
 
         System.out.println(player.cup.displayCup());
-        System.out.println("turn score");
-        System.out.println(player.updateScore());
-        System.out.println("end of round");
+        System.out.println("Points scored on this roll " + player.updateScore());
+        //System.out.println(player.updateScore());
+        System.out.println("Next round");
 
     }
 }
