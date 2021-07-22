@@ -1,6 +1,5 @@
 package com.careerDevs;
 import java.util.*;
-
 public class Yahtzee {
     public Player player;
     private final Scanner scanner = new Scanner(System.in);
@@ -12,7 +11,10 @@ public class Yahtzee {
 
     // TODO refactor play to run 5 turns then display total score.
     public void play() {
-        turn();
+        for (int i =0 ; i < 5; i++) {
+            turn();
+        }
+        System.out.println(player.score);
     }
 
     public void getSelections() {
@@ -31,5 +33,9 @@ public class Yahtzee {
         }
 
         System.out.println(player.cup.displayCup());
+        System.out.println("turn score");
+        System.out.println(player.updateScore());
+        System.out.println("end of round");
+
     }
 }
