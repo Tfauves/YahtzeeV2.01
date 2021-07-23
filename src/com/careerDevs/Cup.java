@@ -42,6 +42,6 @@ public class Cup {
             selections.add(Integer.parseInt(number) - 1);
         }
 
-        return selections;
+        return selections.contains(-1) ? new ArrayList<Integer>() : selections;
     }
 }
